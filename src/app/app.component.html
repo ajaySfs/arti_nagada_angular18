@@ -1,3 +1,4 @@
+
 <div class="app">
   <!-- <header>
     <nav>
@@ -74,7 +75,7 @@
       </div>
       <div class="row align-items-center justify-content-between benefits-image">
         <div class="mb-sm-5 mb-xl-0 col-lg-12 col-xl-5 col-xxl-6 benefits-img">
-          <img src="assest/images/home-slider/home-slider1.jpg" class="w-100 h-100 theme-border-radius">
+          <img src="assets/images/home-slider/home-slider1.jpg" class="w-100 h-100 theme-border-radius">
         </div>
         <div class=" row col-lg-12 col-xl-7 col-xxl-6 benefits-pera">
           <!-- <i class="fa-solid fa-check theme-icon-secondary pe-2 theme-icon-size-small"></i> -->
@@ -160,7 +161,7 @@
           </div>
         </div>
         <div class="col-lg-6 features-img">
-          <img src="assest/images/home-slider/home-slider3.jpg" class="w-100 theme-border-radius">
+          <img src="assets/images/home-slider/home-slider3.jpg" class="w-100 theme-border-radius">
         </div>
       </div>
     </div>
@@ -213,7 +214,7 @@
     </div>
   </section>
   <section class="our-story"
-    style="background-image: url(assest/images/home-slider/home-slider2.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; border-bottom: 5px solid#fff;">
+    style="background-image: url(assets/images/home-slider/home-slider2.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; border-bottom: 5px solid#fff;">
     <div class="container">
       <div class="row">
         <div class="head-section">
@@ -236,74 +237,59 @@
         <h2 class=" theme-text-primary">Testimonial</h2>
       </div>
       <div class="testimonials-info">
-        <div class="swiper testimonials-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide text-center">
+        <div class="slider-container">
+          <div class="slides" [ngStyle]="{'transform': 'translateX(' + currentTransform + '%)'}">
+            <div class="slide" *ngFor="let card of cards">
               <div class="card mx-3 theme-border-radius theme-shadow">
                 <div class="card-body ">
-                  <img src="assest/images/client-1.png">
-                  <h3 class="card-title theme-icon-primary">Dilip Panwar</h3>
-                  <p>I did lot of research before purchasing the product and realised that Vishwakarma is one of the
-                    best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and
-                    robust. Would like to deal again in future</p>
-                  <img src="assest/images/star.png">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide text-center">
-              <div class="card mx-3 theme-border-radius theme-shadow">
-                <div class="card-body ">
-                  <img src="assest/images/client-2.png">
-                  <h3 class="card-title theme-icon-primary">Mayur</h3>
-                  <p>I did lot of research before purchasing the product and realised that Vishwakarma is one of the
-                    best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and
-                    robust. Would like to deal again in future</p>
-                  <img src="assest/images/star.png">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide text-center">
-              <div class="card mx-3 theme-border-radius theme-shadow">
-                <div class="card-body ">
-                  <img src="assest/images/client-1.png">
-                  <h3 class="card-title theme-icon-primary">Rahul Kumar Singh</h3>
-                  <p>I did lot of research before purchasing the product and realised that Vishwakarma is one of the
-                    best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and
-                    robust. Would like to deal again in future</p>
-                  <img src="assest/images/star.png">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide text-center">
-              <div class="card mx-3 theme-border-radius theme-shadow">
-                <div class="card-body ">
-                  <img src="assest/images/client-2.png">
-                  <h3 class="card-title theme-icon-primary">Sanjeev</h3>
-                  <p>I did lot of research before purchasing the product and realised that Vishwakarma is one of the
-                    best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and
-                    robust. Would like to deal again in future</p>
-                  <img src="assest/images/star.png">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide text-center">
-              <div class="card mx-3 theme-border-radius theme-shadow">
-                <div class="card-body ">
-                  <img src="assest/images/client-1.png">
-                  <h3 class="card-title theme-icon-primary">DS Singh</h3>
-                  <p>I did lot of research before purchasing the product and realised that Vishwakarma is one of the
-                    best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and
-                    robust. Would like to deal again in future</p>
-                  <img src="assest/images/star.png">
+                  <img [src]="card.image">
+                  <h3 class="card-title theme-icon-primary">{{card.title}}</h3>
+                  <p>{{card.description}}</p>
+                  <img src="assets/images/star.png">
                 </div>
               </div>
             </div>
           </div>
-
+        
+          <!-- Navigation Buttons -->
+          <a class="prev" (click)="prevSlide()">&#10094;</a>
+          <a class="next" (click)="nextSlide()">&#10095;</a>
         </div>
+        
       </div>
     </div>
-  </section>
-</div>
 
+   
+  </section>
+  
+</div>
+<footer class="theme-bg-secondary py-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class=" footer-logo">
+        <a href="index.html"> <img src="assets/images/logo.png" class="d-block footer-logo"></a>
+        <div class="row footer-location  mt-2">
+          <i class="fa-solid fa-location-dot theme-icon-primary-light"></i>
+          <p class="theme-text-light mb-0 ">Vishwakarma Agricultural Works,<br> Mansa, Gujarat</p>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="tel:+91 8181038038" class="theme-text-light mb-2 d-inline-block"><i
+            class="fa-solid fa-phone pe-2 theme-icon-primary-light"></i>8181038038</a><br>
+        <a href="mailto:info@vishwakarma.co.in" target="_blank" class="theme-text-light mb-2 d-inline-block"> <i
+            class="fa-regular fa-envelope pe-2 theme-icon-primary-light"> </i> info&#64;vishwakarma.co.in</a><br>
+        <a href="http://www.artimachine.com/" target="_blank" class="theme-text-light mb-2 d-inline-block"><i
+            class="fa-solid fa-globe pe-2 theme-icon-primary-light"></i> www.artimachine.com</a>
+        <a href="https://www.instagram.com/reel/C48MamtxfWN/?igsh=MTh6bXlmdzZhZzRwbA%3D%3D" target="_blank"
+          class="theme-text-light mb-2 d-block"><i
+            class="fa-brands fa-instagram pe-2 theme-icon-primary-light"></i>Instagram</a>
+        <a href="term_conditions_policy.html" class="theme-text-light mb-2  d-block"><i
+            class="fa-solid fa-lock pe-2 theme-icon-primary-light"></i>Terms & Conditions Use</a>
+        <a href="contact.html" class="theme-text-light d-block"><i
+            class="fa-solid fa-phone pe-2 theme-icon-primary-light"></i>
+          Contact us</a>
+      </div>
+    </div>
+    </div>
+</footer>
 
