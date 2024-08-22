@@ -62,14 +62,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "arti_nagada:build"
+            "buildTarget": "arti_nagada:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "arti_nagada:build:production"
+              "buildTarget": "arti_nagada:build:production"
             },
             "development": {
-              "browserTarget": "arti_nagada:build:development"
+              "buildTarget": "arti_nagada:build:development"
             }
           },
           "defaultConfiguration": "development"
