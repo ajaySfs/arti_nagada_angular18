@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+/* ==================================     theme-btn-bg    ================================== */
+i {
+    padding-top: 5px;
+  }
+  
+  .animation-btn i {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .theme-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+  
+    display: inline-block;
+  }
+  
+  .theme-btn-sacendory {
+    background: #ed3541;
+    color: #fff;
+  }
+  
+  .theme-btn-primary {
+    background: #0c0c45;
+    color: #fff;
+  }
+  
+  .theme-btn-primary:hover {
+    background: #227afe;
+    color: #fff;
+  }
+  
+  .animation-btn:hover i {
+    transform: translate(5px, 0px);
+  }
+  
+  /* ==================================     theme-bg-color     ================================== */
+  .theme-bg-primary {
+    background: #ed3541;
+  }
+  
+  .theme-bg-secondary {
+    background: #0c0c45;
+  }
+  
+  .theme-bg-primary-light {
+    background: #80808017;
+  }
+
+  /* ==================================     theme-icon-color     ================================== */
+.theme-icon-primary {
+    color: #0c0c45;
+  }
+  .theme-icon-primary-light {
+    color: #fff;
+  }
+  .theme-icon-secondary {
+    color: #ed3541;
+  }
+  .theme-icon-size-small{
+    font-size: 20px;
+  }
+  
+  .theme-icon-size {
+    font-size: 40px;
+  }
+  
+  /* ==================================     theme-icon-color     ================================== */
+  /* ==================================     Border radius     ================================== */
+  .theme-border-radius {
+    border-radius: 18px;
+  }
+  .theme-border-radius-light {
+    border-radius: 10px;
+  }
+  /* ==================================     Border radius close     ================================== */
+  /* ==================================     Form fields     ================================== */
+  .form-control,
+  .input-group-text,
+  textarea.form-control,
+  select,
+  input[type="date"],
+  input[type="text"],
+  input[type="number"],
+  input[type="email"] {
+    border: none;
+    background: #fff;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    height: 35px;
+  }
+  
+  
+  /* ==================================     theme-text-size     ================================== */
+  
+  .theme-small-text {
+    font-size: 14px;
+  }
+  
+  .theme-med-text {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .upper-transform-text {
+    text-transform: uppercase;
+  }
+  
+  /* ==================================     theme-text-size close     ================================== */
+  /* ==================================     theme-text-color     ================================== */
+  .theme-text-primary {
+    color: #ed3541;
+  }
+  
+  .theme-text-secondary {
+    color: #36C991;
+  }
+  
+  .theme-text-primary-light {
+    color: #74777d;
+  }
+  
+  .theme-text-secondary-light {
+    color: #227afe;
+  }
+  
+  .theme-text-light {
+    color: #fff;
+  }
+  
+  .theme-text-dark {
+    color: #0c0c45;
+  }
