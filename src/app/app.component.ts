@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ProductsComponent } from "./products/products.component"; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,CommonModule],
+  imports: [RouterOutlet, RouterLink, CommonModule, ProductsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  constructor(private router: Router) {}
   title = 'arti_nagada';
   cards = [
     { image: 'assets/images/client-1.png', title: 'Dilip Panwar', description: 'I did lot of research before purchasing the product and realised that Vishwakarma is one of the best manufacturer for Automatic Nagada Machine. Their delivery process is also very smooth and robust. Would like to deal again in future' },
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit {
   ];
 
   currentTransform = 0;
-  visibleCards = 3; // Adjust the number of visible cards
+  visibleCards = 3;
 
   get maxTransform() {
     return -(this.cards.length - this.visibleCards) * (100 / this.visibleCards);
@@ -45,6 +47,10 @@ export class AppComponent implements OnInit {
     if (this.currentTransform > this.maxTransform) {
       this.currentTransform -= 100 / this.visibleCards;
     }
+  }
+
+  home(){
+    this.router.navigate(['/'])
   }
 }
 
